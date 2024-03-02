@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Abfrageprogramm Latein</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta name="author" content="Justus Henneberg">
+<link rel="stylesheet" type="text/css" href="user/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="user/favicon.ico">
+<script type="text/javascript" src="user/navigation.js"></script>
+<script type="text/javascript" src="user/substantive.js"></script>
+</head>
+<body onload="Start(); Initialisieren();" onunload="Speichern()">
+<div id="navi">
+<img src="user/navi.bmp" alt="" border="0">
+<div id="links">
+<a href="index.htm">Startseite</a><br>
+<a href="adjektive.htm">Abfrage Adjektive</a><br>
+<a href="substantive.htm">Abfrage Substantive</a><br>
+<a href="combosa.htm">Abfrage Subst. mit Adj.</a><br>
+<a href="combosp.htm">Abfrage Subst. mit Part.</a><br>
+<a href="partizipien.htm">Abfrage Partizipien</a><br>
+<a href="pronomina.htm">Abfrage Pronomina</a><br>
+<a href="verben.htm">Abfrage Verben</a><br>
+<a href="impressum.htm">Impressum</a><br>
+</div>
+</div>
+<h1>Abfrageprogramm Substantive</h1>
+<div class="anleitung">
+<span>Was muss ich machen?</span>
+Hier geht's zur <a href="anleitung.htm">Anleitung zu den Abfrageprogrammen</a>!
+</div>
+<form action="" name="Abfrage" onsubmit="Pruefen(); return false;">
+<p>Bilde den <b id="Fall">[Fall]</b> von <b id="Wort">[Wort]</b>!</p>
+<input type="text" name="Eingabe" class="feld" onkeydown="KeinStatus()">
+<input type="submit" value="Weiter" class="button weiter"><br>
+<textarea rows="4 cols="200" name="Statusfeld" class="feld" readonly></textarea>
+</form>
+<form action="" name="config">
+<table border="0" class="config">
+<tr>
+<td>
+<fieldset class="s gruppe">
+<legend>Deklination</legend>
+<input type="checkbox" class="check" name="Dekl" onclick="DeklAendern(0)" checked>
+a - Deklination<br>
+<input type="checkbox" class="check" name="Dekl" onclick="DeklAendern(1)" checked>
+e - Deklination<br>
+<input type="checkbox" class="check" name="Dekl" onclick="DeklAendern(2)" checked>
+o - Deklination m<br>
+<input type="checkbox" class="check" name="Dekl" onclick="DeklAendern(3)" checked>
+o - Deklination n<br>
+<input type="checkbox" class="check" name="Dekl" onclick="DeklAendern(4)" checked>
+u - Deklination
+</fieldset>
+</td>
+</tr>
+</table>
+</form>
+<p>
+Richtige Antworten: <b id="richtig">0</b><br>
+Falsche Antworten: <b id="falsch">0</b>
+</p>
+<form action="" name="save">
+<input type="checkbox" class="check"> <b>Punktestand speichern</b><br>
+(Feature verwendet Cookies)
+</form>
+<div class="impressumlink">
+&copy; 2013 jh &mdash; <a href="impressum.htm">Impressum</a>
+</div>
+</body>
+</html>

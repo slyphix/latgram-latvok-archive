@@ -1,0 +1,428 @@
+
+html {
+    height: 100%;
+}
+#menupush {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    background-color: #f0f9ff;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.2s left;
+    transition: 0.2s left;
+    height: 100%;
+}
+#menupush.left {
+    left: 0;
+}
+#menupush.open {
+    left: 250px;
+}
+#mainheading {
+    margin: 7px 2px;
+    font-size: 27px;
+}
+#wortcontainer {
+    margin: 2px 5px;
+    padding: 0;
+}
+#wort {
+    margin: 4px 2px;
+    padding: 0px;
+    font-weight: bold;
+    font-size: 20px;
+}
+#content {
+    padding: 5px;
+    padding-top: 35px;
+    z-index: 5;
+    position: relative;
+    height: 100%;
+}
+#menu {
+    background: #202023;
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    top: 0;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #eef;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.2s left;
+    transition: 0.2s left;
+}
+#menu.left {
+    left: -250px;
+}
+#menu.open {
+    left: 0;
+    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
+}
+#menu h3 {
+    font-size: 20px;
+    margin: 0;
+    padding: 4px 10px;
+    background-color: #303034;
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.5);
+    height: 26px;
+}
+#menu #noheading {
+    padding: 5px;
+    margin: 0;
+}
+
+label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 15px;
+}
+input[type=checkbox] + label:before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    background-color: #e8e8ff;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+input[type=checkbox] {
+    display: none;
+}
+input[type=checkbox] + label:before {
+    border-radius: 3px;
+}
+input[type=checkbox]:checked + label:before {  
+    content: "x"; /*"\2713";*/
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    font-weight: bold;
+    color: #111;
+    text-align: center;
+    line-height: 15px;
+}
+.info {
+    position: relative;
+    width: 250px;
+    display: block;
+    margin-bottom: 10px;
+}
+.infobox {
+    font-size: 9px;
+    position: absolute;
+    top: -4px;
+    left: 20px;
+    visibility: hidden;
+}
+#checkboxes {
+    margin: 0;
+    padding: 5px;
+}
+#config {
+    margin: 0;
+    margin-top: 5px;
+    padding: 3px;
+}
+#uploadvisual {
+    position: relative;
+    width: 220px;
+    overflow: hidden;
+    background: #444;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2) inset;
+    border-radius: 2px;
+    margin: 2px;
+    padding: 4px 6px;
+    font-size: 10px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 150;
+}
+#file {
+    height: 100%;
+    width: 500px;
+    position: absolute;
+    left: -310px;
+    font-size: 0;
+    z-index: 110;
+    color: transparent;
+    background: transparent;
+    border: none;
+}
+.miniheading {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#confirm {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    font-size: 20px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    background-color: #202023;
+    color: #0c0;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    z-index: 110;
+}
+
+#selectedfiles {
+    position: relative;
+    width: 230px;
+    overflow: hidden;
+    background: #444;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2) inset;
+    border-radius: 2px;
+    border: none;
+    margin: 2px;
+    padding: 2px 5px;
+    font-size: 12px;
+    color: white;
+}
+/*
+    notiz:
+    selectedfiles könnte wie fileupload umgesetzt werden - liste verstecken, overlay machen und event weiterleiten
+    alternativ: scrollbarer div, dann muimanager ändern
+*/ .nonexistentclass {a:b} /* damit ich den kommentar wiederfinde */
+
+#filefeed{
+    position: relative;
+    width: 220px;
+    overflow: hidden;
+    background: #444;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2) inset;
+    border-radius: 2px;
+    margin: 2px;
+    padding: 2px 5px;
+    font-size: 10px;
+}
+
+#nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 0;
+    overflow: visible;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    background-color: #414B6A;
+    color: #eef;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    z-index: 30;
+}
+#nav #heading {
+    display: inline;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    z-index: 40;
+}
+#nav #version {
+    font-size: 8px;
+}
+#nav #trigger {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    background: url(nav.png) no-repeat left top;
+    cursor: pointer;
+    height: 27px;
+    width: 33px;
+    margin: 0;
+    /*transition: background-position 0.2s;*/
+}
+#nav #trigger.left {
+    background-position: left top;
+}
+#nav #trigger.open {
+    background-position: -33px top;
+}
+#nav #anleitung {
+    position: absolute;
+    top: 1px;
+    right: 6px;
+    text-align: right;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #eef;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+#nav #anleitung a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #eef;
+    font-size: 12px;
+}
+#confirmbut {
+    position: fixed;
+    bottom: 20px;
+    right: 0px;
+    height: 25px;
+    width: 130px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 2px 10px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    border: 1px solid black;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #414B6A;
+    color: #eef;
+    text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    z-index: 20;
+}
+#confirmbut.left {
+    opacity: 1;
+    -webkit-transition: opacity 0.1s 0.1s;
+    transition: opacity 0.1s 0.1s;
+}
+#confirmbut.open {
+    opacity: 0;
+    -webkit-transition: opacity 0.1s;
+    transition: opacity 0.1s;
+}
+.auswahl {
+    width: 100%;
+    border: 1px solid #014;
+    border-radius: 2px;
+    background-color: white;
+    margin: 1px;
+    padding: 0 2px;
+    padding: 2px 1px;
+    cursor: pointer;
+}
+#wortauswahl {
+    width: 100%;
+    margin: 3px 0;
+    padding: 2px;
+    padding: 4px;
+    font-weight: bold;
+}
+#auswahltabelle {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#auswahltabelle th {
+    font-weight: bold;
+    text-align: right;
+    width: 80px;
+    margin: 0;
+    padding: 0;
+    padding-right: 5px;
+}
+#auswahltabelle td {
+    margin: 0;
+    padding: 1px;
+}
+
+#blockout {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+div#overlay {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    /*left: -120%;*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*transition: left 0.4s;*/
+    -webkit-transition: 0s 0.2s visibility, 0s 0.2s opacity, 0s 0.2s z-index;
+    transition: 0s 0.2s visibility, 0s 0.2s opacity, 0s 0.2s z-index;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+}
+div#overlay.active {
+    -webkit-transition: none;
+    transition: none;
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+}
+div#fade {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+    height: 100%;
+    width: 100%;
+}
+#overlaytext {
+    position: relative;
+    margin-left: 10px;
+    margin-top: 40px;
+    z-index: 25;
+    color: #eef;
+    font-size: 13px;
+}
+#overlaytext h1 {
+    margin: 8px 0;
+    font-size: 23px;
+}
+#overlaytext h3 {
+    margin: 7px 2px;
+    font-size: 15px;
+}
+#overlaytext p {
+    margin-left: 10px;
+}
+#overlaytext #potforms {
+    margin-left: 0;
+    list-style-type: square;
+}
+#overlaytext #potforms li {
+    margin-bottom: 2px;
+    font-size: 11px;
+}
+.richtig {
+    color: #090;
+}
+.falsch {
+    color: #900;
+}

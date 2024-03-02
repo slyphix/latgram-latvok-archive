@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LatVok</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="bin/style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="bin/favicon.ico">
+        <script type="text/javascript" src="bin/error.js"></script>
+        <script type="text/javascript" src="bin/voc.js"></script>
+        <script type="text/javascript" src="bin/menu.js"></script>
+        <script type="text/javascript" src="bin/lib.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <img src="bin/latvok.png" alt="" height="64" width="64" id="icon">
+            <h1 id="heading">LatVok</h1><br>
+            <span id="version">1.2 open beta (rev 0) - &copy; 2014/2015 jh</span>
+            <div id="anleitung">
+                <a href="anleitung.html">Anleitung</a><br>
+                <a href="hilfe.html">Hilfe</a>
+            </div>
+            <div id="pageconfig">
+                <div id="logo" title="Einstellungen"></div>
+                <div id="menu">
+                    <h2>Einstellungen</h2>
+                    <input type="checkbox" id="formen"> <label for="formen">Formen abfragen</label><br>
+                    <div class="info">
+                        <div class="infobox" id="infof">Einstellung wird beim nächsten Wort übernommen</div>
+                    </div>
+                    <input type="checkbox" id="wichtung"> <label for="wichtung">Wortwichtung aktivieren</label><br>
+                    <div class="info">
+                        <div class="infobox" id="infow">Einstellung wird beim nächsten Wort übernommen</div>
+                    </div>
+                    <div id="config">
+                        <div id="upload">
+                            <span id="confirm">&#10003;</span>
+                            Datei(en) laden:<br>
+                            <input type="file" id="file" multiple>
+                        </div>
+                        <div id="selectcontainer">
+                            Geladene Dateien:<br>
+                            <select id="selectedfiles" size="1">
+                                <option>LatVok - Testwortschatz</option>
+                            </select>
+                        </div>
+                        <div>
+                            Dateifeedback:<br>
+                            <div id="filefeed">
+                                <span id="errline">Keine Datei gewählt...</span><br>
+                                <span id="locationline"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="overlay">
+            <div id="fade">
+                <div id="blockout"></div>
+                <div id="overlaytext">
+                    <h1>Auswertung</h1>
+                    <h3>&Uuml;bersetzung: <b class="richtig" id="transrf">richtig</b></h3>
+                    <p>
+                        <b id="resinf">noscere</b> bedeutet <b id="resbed">wissen, kennen</b>
+                    </p>
+                    <div id="showforms">
+                        <h3>Formbestimmung: <b class="falsch" id="formrf">falsch</b></h3>
+                        <p>
+                            <b id="reswort">noscere</b> hat folgende Formen:<br>
+                        </p>
+                        <ul id="potforms">
+                            <li>1. Person Plural Indikativ Plusquamperfekt Passiv</li>
+                            <li>3. Person Singular Indikativ Plusquamperfekt Aktiv</li>
+                            <li>2. Person Plural Konjunktiv Futur Passiv</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <h1>Vokabelabfrage</h1>
+            <p>
+                W&auml;hle die <b>&Uuml;bersetzung</b><span id="form"> und <b>eine m&ouml;gliche Form</b></span> von:<br>
+            </p>
+            <h2 id="wort">noscere</h2>
+            <table id="interface"><tr><td rowspan="2">
+                <fieldset class="group" id="trans">
+                    <legend>&Uuml;bersetzung</legend>
+                        <input type="radio" name="trans" id="trans1"> <label for="trans1">sein</label><br>
+                        <input type="radio" name="trans" id="trans2"> <label for="trans2">denken, wissen, kennen</label><br>
+                        <input type="radio" name="trans" id="trans3"> <label for="trans3">Sklavin</label><br>
+                        <input type="radio" name="trans" id="trans4"> <label for="trans4">dann, da, darauf, damals</label><br>
+                        <input type="radio" name="trans" id="trans5"> <label for="trans5">überschreiten, übergehen, übertreffen</label><br>
+                </fieldset>
+            </td><td class="form top" id="modus">
+                <fieldset class="group small">
+                    <legend>Modus</legend>
+                        <input type="radio" name="modus" id="modus1"> <label for="modus1">Indikativ</label><br>
+                        <input type="radio" name="modus" id="modus2"> <label for="modus2">Konjunktiv</label><br>
+                </fieldset>
+            </td><td class="form" rowspan="2" id="tempus">
+                <fieldset class="group">
+                    <legend>Tempus</legend>
+                        <input type="radio" name="zeit" id="zeit1"> <label for="zeit1">Futur</label><br>
+                        <input type="radio" name="zeit" id="zeit2"> <label for="zeit2">Pr&auml;sens</label><br>
+                        <input type="radio" name="zeit" id="zeit3"> <label for="zeit3">Imperfekt</label><br>
+                        <input type="radio" name="zeit" id="zeit4"> <label for="zeit4">Perfekt</label><br>
+                        <input type="radio" name="zeit" id="zeit5"> <label for="zeit5">Plusquamperfekt</label>
+                </fieldset>
+            </td><td class="form" rowspan="2" id="kasus">
+                <fieldset class="group">
+                    <legend>Kasus</legend>
+                        <input type="radio" name="kasus" id="kasus1"> <label for="kasus1">Nominativ</label><br>
+                        <input type="radio" name="kasus" id="kasus2"> <label for="kasus2">Genitiv</label><br>
+                        <input type="radio" name="kasus" id="kasus3"> <label for="kasus3">Dativ</label><br>
+                        <input type="radio" name="kasus" id="kasus4"> <label for="kasus4">Akkusativ</label><br>
+                        <input type="radio" name="kasus" id="kasus5"> <label for="kasus5">Ablativ</label>
+                </fieldset>
+            </td><td class="form top" id="numerus">
+                <fieldset class="group small">
+                    <legend>Numerus</legend>
+                        <input type="radio" name="num" id="num1"> <label for="num1">Singular</label><br>
+                        <input type="radio" name="num" id="num2"> <label for="num2">Plural</label>
+                </fieldset>
+            </td><td class="form top" id="steigerung">
+                <fieldset class="group small">
+                    <legend>Steigerung</legend>
+                        <input type="radio" name="steigerung" id="steigerung1"> <label for="steigerung1">Positiv</label><br>
+                        <input type="radio" name="steigerung" id="steigerung2"> <label for="steigerung2">Komparativ</label><br>
+                        <input type="radio" name="steigerung" id="steigerung3"> <label for="steigerung3">Superlativ</label>
+                </fieldset>
+            </td></tr><tr><td class="form bot" id="gv">
+                <fieldset class="group small">
+                    <legend>Genus Verbi</legend>
+                        <input type="radio" name="gv" id="gv1"> <label for="gv1">Aktiv</label><br>
+                        <input type="radio" name="gv" id="gv2"> <label for="gv2">Passiv</label>
+                </fieldset>
+            </td><td class="form bot" id="person">
+                <fieldset class="group small">
+                    <legend>Person</legend>
+                        <input type="radio" name="pers" id="pers1"> <label for="pers1">1.&nbsp;Person</label><br>
+                        <input type="radio" name="pers" id="pers2"> <label for="pers2">2.&nbsp;Person</label><br>
+                        <input type="radio" name="pers" id="pers3"> <label for="pers3">3.&nbsp;Person</label>
+                </fieldset>
+            </td><td class="form bot"  id="genus">
+                <fieldset class="group small">
+                    <legend>Genus</legend>
+                        <input type="radio" name="gen" id="gen1"> <label for="gen1">m</label><br>
+                        <input type="radio" name="gen" id="gen2"> <label for="gen2">f</label><br>
+                        <input type="radio" name="gen" id="gen3"> <label for="gen3">n</label>
+                </fieldset>
+            </td></tr></table>
+            <div id="confirmbut">
+                <div id="shiny"></div>
+                <span id="confirmbuttext">Best&auml;tigen</span>
+            </div>
+        </div>
+    </body>
+</html>

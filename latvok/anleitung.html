@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LatVok - Anleitung</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="bin/style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="bin/favicon.ico">
+    </head>
+    <body>
+        <div id="nav">
+            <a href="index.html" id="latvoklink"><img src="bin/latvok.png" alt="" height="64" width="64" id="icon">
+            <h1 id="heading">LatVok</h1></a><br>
+            <span id="version">&copy; '14 jh</span>
+            <div id="anleitung">
+                <a href="anleitung.html">Anleitung</a><br>
+                <a href="hilfe.html">Hilfe</a>
+            </div>
+            <div id="pageconfig">
+                <div id="logodisabled" title="Einstellungen"></div>
+            </div>
+        </div>
+        <div id="content">
+            <h1>Anleitung</h1>
+            <div id="wip"><b>IN BEARBEITUNG</b> - Diese Seite ist noch in Bearbeitung, sämtliche Informationen können unvollständig sein, Änderungen vorbehalten.</div>
+            <h2>Verwendung</h2>
+            <p>LatVok ist ein digitales Abfrageprogramm für Lateinvokabeln, basierend auf dem
+                Multiple-Choice-Abfragesystem. Als erstes seiner Gattung ist LatVok in der Lage,
+                nicht nur Vokabeln, sondern auch deren Formen abzufragen, wenn es gewünscht ist.
+                So kann LatVok eine Hilfe und Herausforderung für die sein, die Latein lernen und die,
+                die ihr Latein dringend auffrischen möchten.
+            </p>
+            <p>Außerdem besitzt LatVok die Fähigkeit, vom Benutzer erstellte Vokabelsammlungen
+                (hier als 'Abfragedateien' bezeichnet) zu benutzen und die Abfrage auf den gegebenen
+                Wortschatz einzustellen. LatVok selbst enthält einen Testwortschatz aus wenigen Wörtern,
+                der standardmäßig geladen ist und abgefragt wird.
+            </p>
+            <p>Das Programm sucht ein Wort aus dem gegebenen Wortschatz aus und erwartet dann eine
+                Auswahl von Übersetzung und - wenn gewählt - einer möglichen Form des Wortes.
+                Mit Klick auf "Bestätigen" wird die Auswahl überprüft und anschließend kann
+                zur nächsten Aufgabe vorangeschritten werden.
+            </p>
+            <p>Bei Wörtern mit mehreren möglichen Formen kann frei gewählt werden, welche Form sie angeben.
+                
+            </p>
+            <p>
+            </p>
+            <h2>Abfragedateien erstellen</h2>
+            <p>Mit LatVok können Sie Ihre Vokabelabfragen komplett Ihren Bedürfnissen anpassen.
+                Im Folgenden wird erklärt, wie Sie Ihren eigenen Wortschatz erstellen und mit LatVok benutzen können.</p>
+            <p>Benutzen Sie zur Erstellung ein herkömmliches Tabellenkalkulationsprogramm und verwenden Sie die ersten
+                3 Spalten nach dem Schema, was im Folgenden beschrieben wird.
+            <h3>Schema einer Datei</h3>
+            <p>Abfragedateien sind nach einem festen Schema zu gliedern:</p>
+                <table class="beispielzeile"><tr><td>
+                            Flag und Bildungsregeln
+                        </td><td>
+                            Stammformen, durch Kommata getrennt
+                        </td><td>
+                            Übersetzung des Wortes
+                </td></tr></table>
+            
+            <p>Weiter unten finden Sie Ausführungen über Flags und deren Funktion, außerdem, welche Stammformen Sie
+                angeben müssen. 
+            </p>
+
+            <h4>O - Andere Wörter</h4>
+                <p>Verwenden Sie O als Flag, wenn das Wort keiner der unterstützten Bildungsregeln folgt.
+                    Hierbei wird weder eine Angabe der Bildungsregeln noch der Stammformen erwartet.</p>
+                <p>Sie können auch Wörter mit O markieren, die sonst den unterstützen Bildungsregeln folgen.
+                    In diesem Fall wird das Programm zwar keine Formen des Wortes bilden, die Angabe von
+                    Stammformen ist dann aber nicht nötig und kann übergangen werden.</p>
+                <p>Verwenden Sie O auch für Ausnamewörter, die mit herkömmlichen Regeln nicht konjugierbar oder
+                    deklinierbar sind, da die Formbildung bei diesen nicht funktioniert.
+            <h4>S - Substantive</h4>
+                <p>Verwenden Sie S als Flag, wenn das Wort ein Substantiv mit unterstützten Bildungsregeln ist.
+                    Geben Sie direkt nach dem Flag und in derselben Spalte den Code der Deklination des Wortes ein:</p>
+                <ul class="flaglist">
+                    <li>Verwenden Sie <b>a</b>, wenn das Wort den Regeln der <b>a-Deklination</b> folgt.</li>
+                    <li>Verwenden Sie <b>e</b>, wenn das Wort den Regeln der <b>e-Deklination</b> folgt.</li>
+                    <li>Verwenden Sie <b>o</b>, wenn das Wort den Regeln der <b>o-Deklination m</b> folgt.</li>
+                    <li>Verwenden Sie <b>on</b>, wenn das Wort den Regeln der <b>o-Deklination n</b> folgt.</li>
+                    <li>Verwenden Sie <b>u</b>, wenn das Wort den Regeln der <b>u-Deklination</b> folgt.</li>
+                    <li>Verwenden Sie <b>k</b>, wenn das Wort den Regeln der <b>konsonantischen Deklination</b>
+                        (auch 3. Deklination) folgt.</li>
+                    <li>Verwenden Sie <b>kn</b>, wenn das Wort den Regeln der <b>konsonantischen Deklination</b>
+                        folgt und ein <b>Neutrumwort</b> ist.</li>
+                    <li>Verwenden Sie <b>ki</b>, wenn das Wort den Regeln der <b>konsonantischen Deklination</b>
+                        folgt und im Genitiv Plural auf <b>-ium</b> endet.</li>
+                    <li>Verwenden Sie <b>kin</b>, wenn das Wort den Regeln der <b>konsonantischen Deklination</b>
+                        folgt, ein <b>Neutrumwort</b> ist und im Genitiv Plural auf <b>-ium</b> endet.</li>
+                </ul>
+                <p>Geben Sie als Stammformen den <b>Nominativ Singular</b>, den <b>Genitiv Singular</b> und optional das <b>Genus</b> des Wortes an.</p>
+                <p>Beispiele:</p>
+                    <table class="beispielzeile"><tr><td>
+                                So
+                            </td><td>
+                                dominus, domini, m
+                            </td><td>
+                                Herr, Hausherr
+                        </td></tr>
+                        <tr><td>
+                                Skn
+                            </td><td>
+                                carmen, carminis, n
+                            </td><td>
+                                Lied, Gedicht
+                        </td></tr>
+                        <tr><td>
+                                Se
+                            </td><td>
+                                res, rei
+                            </td><td>
+                                Sache, Ding, Vernunft
+                    </td></tr></table>
+            <h4>A - Adjektive</h4>
+                <p>Verwenden Sie A als Flag, wenn das Wort ein Adjektiv mit unterstützten Bildungsregeln ist.
+                    Geben Sie direkt nach dem Flag und in derselben Spalte den Code der Deklination des Wortes ein:</p>
+                <ul class="flaglist">
+                    <li>Verwenden Sie <b>ao</b>, wenn das Wort den Regeln der <b>a- und o-Deklination</b> folgt.</li>
+                    <li>Verwenden Sie <b>k1</b>, wenn das Wort den Regeln der <b>konsonantischen Deklination</b>
+                        folgt und ein einendiges Adjektiv ist.</li>
+                    <li>Verwenden Sie <b>k2</b>, wenn das Wort den Regeln der <b>konsonantischen Deklination</b>
+                        folgt und ein zweiendiges Adjektiv ist.</li>
+                </ul>
+                <p>Weitere Deklinationsregeln stehen noch in der Testphase!</p>
+                <p>Geben Sie als Stammformen den <b>Nominativ Singular m Positiv</b>,
+                    den <b>Genitiv Singular m Positiv</b>, den <b>Nominativ Singular m Komparativ</b> und
+                    den <b>Nominativ Singular m Superlativ</b> an.</p>
+                <p>Beispiele:</p>
+                    <table class="beispielzeile"><tr><td>
+                                Aao
+                            </td><td>
+                                magnus, magni, maior, maximus
+                            </td><td>
+                                groß
+                        </td></tr>
+                        <tr><td>
+                                Ak2
+                            </td><td>
+                                facilis, facilis, facilor, facillimus
+                            </td><td>
+                                leicht (zu tun)
+                    </td></tr></table>
+            <h4>V - Verben</h4>
+                <p>Verwenden Sie V als Flag, wenn das Wort ein Verb mit unterstützten Bildungsregeln ist.
+                    Geben Sie direkt nach dem Flag und in derselben Spalte den Code der Konjugation des Wortes ein:</p>
+                <ul class="flaglist">
+                    <li>Verwenden Sie <b>a</b>, wenn das Wort den Regeln der <b>a-Konjugation</b> folgt.</li>
+                    <li>Verwenden Sie <b>e</b>, wenn das Wort den Regeln der <b>e-Konjugation</b> folgt.</li>
+                    <li>Verwenden Sie <b>i</b>, wenn das Wort den Regeln der <b>i-Konjugation</b> folgt.</li>
+                    <li>Verwenden Sie <b>u</b>, wenn das Wort den Regeln der <b>u-Deklination</b> folgt.</li>
+                    <li>Verwenden Sie <b>k</b>, wenn das Wort den Regeln der <b>konsonantischen Konjugation</b>
+                        folgt.</li>
+                    <li>Verwenden Sie <b>ki</b>, wenn das Wort den Regeln der <b>konsonantischen Konjugation</b>
+                        mit <b>i-Erweiterung</b> folgt.</li>
+                </ul>
+                <p>Geben Sie als Stammformen den <b>Infinitiv</b>, die <b>1. Person Indikativ Präsens Aktiv</b>,
+                    die <b>1. Person Indikativ Perfekt Aktiv</b> und das <b>PPP n</b> des Wortes an.</p>
+                <p>Beispiele:</p>
+                    <table class="beispielzeile"><tr><td>
+                                Vi
+                            </td><td>
+                                audire, audio, audivi, auditum
+                            </td><td>
+                                hören
+                        </td></tr>
+                        <tr><td>
+                                Vki
+                            </td><td>
+                                capere, capio, cepi, captum
+                            </td><td>
+                                ergreifen, fassen
+                        <tr><td>
+                                Va
+                            </td><td>
+                                vocare, voco, vocavi, vocatum
+                            </td><td>
+                                rufen
+                    </td></tr></table>
+            <h4># - Kommentare</h4>
+                <p>Wenn Sie das Hashtag- oder Nummernzeichen '#' als Flag eingeben, wird
+                die Tabellenzeile beim Einlesen übersprungen. Sie können die beiden Spalten
+                also für Notizen zur Datei verwenden oder einfach ein '#' vor eine
+                gültige Zeile setzen, um die Abfrage dieser zu verhindern.</p>
+                    
+            <h3>Fertigstellen der Datei</h3>
+            <p>Speichern sie die Datei im .csv-Format unter beliebigem Namen ab.
+            Wählen Sie die Datei im Programm aus und bestätigen Sie Ihre Auswahl mit Klick
+            auf das grüne Häkchen. Beheben Sie - falls nötig - angezeigte Fehler.
+            </p>
+            <p>Wenn die Datei einwandfrei geladen wurde, können Sie Ihre gültige Datei nutzen
+            oder sogar weitergeben. Achten Sie jedoch bei der Weitergabe darauf, keine
+            Copyrights von Unterrichtswerken o. ä. zu verletzen.
+            </p>
+        </div>
+        <br><br><br><br><br><br><br><br>
+    </body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LatVok</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <link rel="stylesheet" type="text/css" href="../bin/m.css">
+        <link rel="shortcut icon" type="image/x-icon" href="../bin/favicon.ico">
+        <script type="text/javascript" src="../bin/voc.js"></script>
+        <script type="text/javascript" src="../bin/lib.js"></script>
+        <script type="text/javascript" src="../bin/mmenu.js"></script>
+        <script type="text/javascript" src="../bin/error.js"></script>
+        <script type="text/javascript" src="../bin/mobileui.js"></script>
+    </head>
+    <body id="menupush" class="left">
+        <div id="menu" class="left">
+            <h3>Einstellungen</h3>
+            <div id="noheading">
+                <div id="checkboxes">
+                    <input type="checkbox" id="formen"> <label for="formen">Formen abfragen</label><br>
+                    <div class="info">
+                        <div class="infobox" id="infof">Einstellung wird beim nächsten Wort übernommen</div>
+                    </div>
+                    <input type="checkbox" id="wichtung"> <label for="wichtung">Wortwichtung aktivieren</label><br>
+                    <div class="info">
+                        <div class="infobox" id="infow">Einstellung wird beim nächsten Wort übernommen</div>
+                    </div>
+                </div>
+                <div id="config">
+                    <div id="upload">
+                        <span class="miniheading">Datei(en) laden:</span><br>
+                        <div id="uploadvisual">
+                            <span id="confirm">&#10003;</span>
+                            <span id="pointer">Hier tippen, um Dateien auszuwählen.<br>
+                            (<b id="filenum">0</b> Dateien gewählt)</span>
+                            <input type="file" id="file" multiple>
+                        </div>
+                    </div>
+                    <div id="selectcontainer">
+                        <span class="miniheading">Geladene Dateien:</span><br>
+                        <select id="selectedfiles" size="1">
+                            <option>LatVok - Testwortschatz</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span class="miniheading">Dateifeedback:</span><br>
+                        <div id="filefeed">
+                            <span id="errline">Keine Datei gewählt...</span><br>
+                            <span id="locationline"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="nav">
+            <div id="trigger" class="left"></div>
+            <div id="container">
+                <h3 id="heading">LATVOK</h3>
+                <!--<span id="version">&copy; '14 jh</span>-->
+            </div>
+            <div id="anleitung">
+                <a href="anleitung.html">Anleitung</a><br>
+                <a href="hilfe.html">Hilfe</a><br>
+            </div>
+        </div>
+        <div id="overlay">
+            <div id="fade">
+                <div id="blockout"></div>
+                <div id="overlaytext">
+                    <h1>Auswertung</h1>
+                    <h3>&Uuml;bersetzung: <b class="richtig" id="transrf">richtig</b></h3>
+                    <p>
+                        <b id="resinf">noscere</b> bedeutet <b id="resbed">wissen, kennen</b>
+                    </p>
+                    <div id="showforms">
+                        <h3>Formbestimmung: <b class="falsch" id="formrf">falsch</b></h3>
+                        <p>
+                            <b id="reswort">noscere</b> hat folgende Formen:<br>
+                        </p>
+                        <ul id="potforms">
+                            <li>1. Person Plural Indikativ Plusquamperfekt Passiv</li>
+                            <li>3. Person Singular Indikativ Plusquamperfekt Aktiv</li>
+                            <li>2. Person Plural Konjunktiv Futur Passiv</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="confirmbut" class="left">
+            <span id="confirmbuttext">Best&auml;tigen</span>
+        </div>
+        <div id="content">
+            <h1 id="mainheading">Vokabelabfrage</h1>
+            <div id="wortcontainer">
+                W&auml;hle die <b>&Uuml;bersetzung</b><span id="form"> und <b>eine m&ouml;gliche Form</b></span> von:
+            </div>
+            <div id="wort">noscere</div>
+            <div id="interface">
+                <div id="trans">
+                    <select size="1" class="auswahl" id="wortauswahl" name="trans">
+                        <option>sein</option>
+                        <option>denken, wissen, kennen</option>
+                        <option>Sklavin</option>
+                        <option>dann, da, darauf, damals</option>
+                        <option>überschreiten, übergehen, übertreffen</option>
+                    </select>
+                </div>
+                <table id="auswahltabelle"><tr id="person"><th>Person:</th><td>
+                    <select size="1" class="auswahl" name="pers">
+                        <option selected>-</option>
+                        <option>1.&nbsp;Person</option>
+                        <option>2.&nbsp;Person</option>
+                        <option>3.&nbsp;Person</option>
+                    </select>
+                </td></tr><tr id="kasus"><th>Kasus:</th><td>
+                    <select size="1" class="auswahl" name="kasus">
+                        <option selected>-</option>
+                        <option>Nominativ</option>
+                        <option>Genitiv</option>
+                        <option>Dativ</option>
+                        <option>Akkusativ</option>
+                        <option>Ablativ</option>
+                    </select>
+                </td></tr><tr id="numerus"><th>Numerus:</th><td>
+                    <select size="1" class="auswahl" name="num">
+                        <option selected>-</option>
+                        <option>Singular</option>
+                        <option>Plural</option>
+                    </select>
+                </td></tr><tr id="modus"><th>Modus:</th><td>
+                    <select size="1" class="auswahl" name="modus">
+                        <option selected>-</option>
+                        <option>Indikativ</option>
+                        <option>Konjunktiv</option>
+                   </select>
+                </td></tr><tr id="tempus"><th>Tempus:</th><td>
+                    <select size="1" class="auswahl" name="zeit">
+                        <option selected>-</option>
+                        <option>Futur</option>
+                        <option>Pr&auml;sens</option>
+                        <option>Imperfekt</option>
+                        <option>Perfekt</option>
+                        <option>Plusquamperfekt</option>
+                    </select>
+                </td></tr><tr id="gv"><th>Genus Verbi:</th><td>
+                    <select size="1" class="auswahl" name="gv">
+                        <option selected>-</option>
+                        <option>Aktiv</option>
+                        <option>Passiv</option>
+                    </select>
+                </td></tr><tr id="steigerung"><th>Steigerung:</th><td>
+                    <select size="1" class="auswahl" name="steigerung">
+                        <option selected>-</option>
+                        <option>Positiv</option>
+                        <option>Komparativ</option>
+                        <option>Superlativ</option>
+                    </select>
+                </td></tr><tr id="genus"><th>Genus:</th><td>
+                    <select size="1" class="auswahl" name="gen">
+                        <option selected>-</option>
+                        <option>m</option>
+                        <option>f</option>
+                        <option>n</option>
+                    </select>
+                </td></tr></table>
+            </div>
+        </div>
+    </body>
+</html>

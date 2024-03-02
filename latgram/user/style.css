@@ -1,0 +1,64 @@
+/*
+Benutzerstylesheet
+Autor: Justus Henneberg
+Dieses Dokument ist urheberrechtlich geschützt.
+*/
+body { background:url(hintergrund.bmp) repeat-y #FFFFFF; color:#000000; margin-top:20px; margin-left:40px; margin-right:20px; margin-bottom:40px; font:16px Arial; }
+a { text-decoration:underline; }
+#navi { position:absolute; left:19px; top:50px; visibility:hidden; }
+#links { position:absolute; left:10px; top:20px; }
+#navi a:link, #navi a:visited { color:#999999; text-decoration:underline; }
+#navi a:focus, #navi a:hover, #navi a:active { color:#FFFFFF; }
+a:link { color:#0000FF; }
+a:visited { color:#9900FF; }
+a:focus, a:hover, a:active { color:#FF0000; }
+.feld  { width:350px; padding:2px; border:1px solid #9999FF; border-top-color:#000099; border-left-color:#000099; }
+.button { padding:1px; border:2px solid #000099; border-top-color:#9999FF; border-left-color:#9999FF; }
+* html .button { padding:0px; }
+.button:active { border:2px solid #9999FF; border-top-color:#000099; border-left-color:#000099; }
+.auswahl { width:350px; border:1px solid #0000CC; }
+.feld, .button, .auswahl { font:bold 13px Arial; background-color:#CCCCFF; margin:1px; }
+.weiter { width:60px; }
+* html .weiter { padding:0px; font:bold 12px Arial; }
+.form th { text-align:right; }
+.impressum dt { font-weight:bold; }
+.gaeste { border:1px solid blue; margin:5px; width:500px; }
+.gaeste th { background-color:#DDDDFF; border:1px solid blue; font-weight:bold; padding:5px; }
+.gaeste td { background-color:#DDDDFF; border:1px solid blue; padding:5px; }
+.pre { white-space:pre; }
+.abstand { height:30px; }
+.label { cursor:pointer; }
+.gruppe { border:1px solid blue; padding:5px; padding-right:15px; }
+.gruppe legend { font-weight:bold; }
+.a { height:90px; }
+.pa { height:90px; }
+.pr { height:170px; }
+.s { height:130px; }
+.v { height:130px; }
+.config td { vertical-align:top; }
+.admin { border:1px solid #0000FF; background-color:#DDDDFF; width:500px; padding:10px; }
+.adming { border:1px solid #0000FF; background-color:#DDDDFF; width:500px; padding:5px; height:300px; overflow:scroll; }
+.hinweise dt { font-weight:bold; }
+.latwort { font-weight:bold; font-style:italic; color:green; }
+.anleitung { color:black; padding:5px; border:1px solid green; background-color:#DDFFDD; }
+.anleitung a { color:green; }
+.anleitung span { color:black; font-weight:bold; display:block; }
+.inhaltsverzeichnis { border:1px solid blue; padding:5px; padding-right:20px; background:#DDDDFF; }
+.inhaltsverzeichnis ul { list-style-image:url(unten.gif); margin:10px 20px; }
+.inhaltsverzeichnis span { display:block; font-weight:bold; }
+.inhaltsverzeichnis a:link, .inhaltsverzeichnis a:visited { color:blue; }
+.inhaltsverzeichnis a:focus, .inhaltsverzeichnis a:hover, .inhaltsverzeichnis a:active { color:red; }
+.obenlink { color:blue; text-decoration:underline; }
+.passwort { border:1px solid blue; background-color:#DDDDFF; padding:5px; margin:0; margin-top:5px; margin-bottom:5px; }
+.passwort span { color:black; font-weight:bold; }
+.passwort .passwortfeld  { width:200px; padding:2px; border:1px solid #9999FF; border-top-color:#000099; border-left-color:#000099; background-color:DDDDFF; margin-top:5px; margin-bottom:5px; }
+.delete { color:black; margin:10px; padding:5px; border:1px solid blue; background-color:#DDDDFF; }
+.delete span { color:black; font-weight:bold; }
+.deletefeld { width:100px; padding:2px; border:1px solid #9999FF; border-top-color:#000099; border-left-color:#000099; }
+.deletebutton { padding:1px; border:2px solid #000099; border-top-color:#9999FF; border-left-color:#9999FF; }
+* html .deletebutton { padding:0px; }
+.deletebutton:active { border:2px solid #9999FF; border-top-color:#000099; border-left-color:#000099; }
+.deletefeld, .deletebutton { font:bold 13px Arial; background-color:CCCCFF; margin:1px; }
+.abfrageliste { list-style-image:url(rechts.gif); border:1px solid blue; background-color:#DDDDFF; padding:5px; padding-left:30px; }
+.impressumlink { font:13px Arial; text-align:center; border:1px solid #0000FF; background-color:#DDDDFF; color:black; padding:1px; margin:0; margin-top:30px; }
+.impressumlink a { color:blue; }

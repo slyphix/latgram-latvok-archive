@@ -27,10 +27,10 @@ Any word which does not strictly follow the standard inflection rules (such as _
 
 I built two websites around this concept, which can be downloaded and enjoyed without an internet connection:
 
-[LatGram](slyphix.github.io/latgram-latvok-archive/latgram) (started in 2010) asked the user to apply inflection rules to a word in its basic (dictionary) form.
+[LatGram](https://slyphix.github.io/latgram-latvok-archive/latgram) (started in 2010) asked the user to apply inflection rules to a word in its basic (dictionary) form.
 This served as a proof-of-concept for various word categories, including adjectives, nouns, and verbs.
 
-[LatVok](slyphix.github.io/latgram-latvok-archive/latvok) (started in 2014) displayed an already inflected word, and asked the user to determine its grammatical form and its translation.
+[LatVok](https://slyphix.github.io/latgram-latvok-archive/latvok) (started in 2014) displayed an already inflected word, and asked the user to determine its grammatical form and its translation.
 In addition, users could finally add their own vocabulary by submitting CSV files.
 
 Unfortunately, the websites are only available in German (including most parts of the code, lol), making them rather inaccessible for international visitors.
